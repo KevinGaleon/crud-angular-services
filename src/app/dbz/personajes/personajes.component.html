@@ -1,0 +1,25 @@
+<div ngClass="tableContainer">
+  <table id="personajesTable">
+    <thead>
+      <tr ngClass="textCenter">
+          <th>Código</th>
+          <th>Nombre</th>
+          <th>Ciudad</th>
+          <th>Poder</th>
+          <th>Acciones</th>
+      </tr>
+    </thead>
+      <tbody id="personajesBody" *ngFor="let personaje of personajes; let indexOfelement=index;">
+        <tr ngClass="tableRow">
+          <td>{{personaje.codigo}}</td>
+          <td>{{personaje.nombre}}</td>
+          <td>{{personaje.ciudad}}</td>
+          <td>{{personaje.poder}}</td>
+          <td>
+            <button class="btn btn-submit btnEditar" (click)="setForm(personaje, indexOfelement)">Editar</button>
+            <button class="btn btn-danger btnEliminar" (click)="eliminar(indexOfelement)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

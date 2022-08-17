@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,400&display=swap');
+
+button {
+    padding: 0px 10px;
+    color: black;
+    background-color: rgb(94, 131, 201);
+    border-width: 0px;
+    border-radius: 8px;
+}
+
+button:hover {
+    background-color: rgb(112, 144, 204);
+    cursor: pointer;
+}
+
+button, video{
+    margin-right: 10px;
+}
+
+.textCenter {
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+thead, tbody {
+    width: 100%;
+}
+
+thead {
+    border-collapse: collapse;
+    border-width: 0px;
+    border-bottom-width: 1px;
+    border-color: white;
+    border-style: solid;
+}
+
+.tableRow {
+    border-width: 0px;
+    border-top-width: 1px;
+    border-color: white;
+    border-style: solid;
+}
+
+.tableContainer {
+    align-self: flex-start;
+    border: 2px solid white;
+    border-radius: 10px;
+    margin: 20px 30px;
+}
+
+.btn {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    padding: 5px 10px;
+}
+
+.btn-submit {
+    background-color: #764AF1;
+}
+
+.btn-submit:hover {
+    background-color: #9772FB;
+}
+
+.btn-danger {
+    background-color: #FF1E00;
+}
+
+.btn-danger:hover {
+    background-color: #FF8B8B;
+}

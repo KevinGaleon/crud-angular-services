@@ -1,0 +1,6 @@
+<h2>DRAGON BALL Z</h2>
+<hr>
+<div ngClass="bodyContainer">
+  <app-agregar [dbzForm]="dbzFormInit"></app-agregar>
+  <app-personajes (personajeToModify)="setForm($event)"></app-personajes>
+</div>

@@ -1,0 +1,27 @@
+<div ngClass="formContainer">
+  <form (ngSubmit)="insertar()" [formGroup]="dbzForm">
+    <div ngClass="headerForm">
+      Formulario de DBZ
+    </div>
+    <div ngClass="col">
+      <label for="">Código</label>
+      <input id="inputCodigo" type="number" placeholder="digite el código" name="codigo" required formControlName="codigo">
+    </div>
+    <div ngClass="col">
+      <label for="">Nombre</label>
+      <input id="inputNombre" type="text" placeholder="ingrese el nombre" name="nombre" required formControlName="nombre">
+    </div>
+    <div ngClass="col">
+      <label for="">Ciudad</label>
+      <input id="inputCiudad" type="text" placeholder="ingrese la ciudad" name="ciudad" required formControlName="ciudad">
+    </div>
+    <div ngClass="col">
+      <label for="">Poder</label>
+      <input id="inputPoder" type="number" placeholder="digite el poder" name="poder" required formControlName="poder">
+    </div>
+    <div ngClass="row">
+      <button type="reset" (click)="resetForm()"><p>Limpiar</p></button>
+      <button type="submit"><p>Guardar</p></button>
+    </div>
+  </form>
+</div>
