@@ -1,8 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { DbzService } from '../services/dbz.service';
-import { Personaje } from '../interfaces/Personaje';
-import { PaginaPrincipalComponent } from '../pagina-principal/pagina-principal.component';
 
 @Component({
   selector: 'app-agregar',
@@ -19,7 +17,6 @@ export class AgregarComponent implements OnInit {
   }
 
   resetForm = () => {
-    this.dbzService.index = -1;
     this.dbzService.opcion = 'CREAR';
   }
 
@@ -27,13 +24,16 @@ export class AgregarComponent implements OnInit {
     const personaje = this.dbzForm.value;
 
     if (this.dbzService.opcion === 'CREAR') {
-      this.dbzService.agregarPersonajes(personaje);
+      this.dbzService.save(personaje).subscribe(response => {
+        this.dbzService.cargarData();
+      });
     } else {
-      this.dbzService.editarPersonaje(this.dbzService.index, personaje);
+      this.dbzService.update(this.dbzService._id, personaje).subscribe(response => {
+        this.dbzService.cargarData();
+      });
     }
     this.dbzForm.reset();
     this.dbzService.opcion = 'CREAR';
-    this.dbzService.index = -1;
   }
 }
 

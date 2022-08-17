@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -10,6 +11,7 @@ import { DbzModule } from './dbz/dbz.module';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     DbzModule,
   ],
   providers: [],

@@ -30,7 +30,6 @@ export class PaginaPrincipalComponent implements OnInit {
 
   setForm(personaje: Personaje){
     this.dbzService.opcion = 'EDITAR';
-    console.log(this.dbzService.opcion);
     this.dbzFormInit.patchValue({
       codigo: personaje.codigo,
       nombre:personaje.nombre,

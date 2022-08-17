@@ -5,8 +5,7 @@ import { AgregarComponent } from './agregar/agregar.component';
 import { PaginaPrincipalComponent } from './pagina-principal/pagina-principal.component';
 import { DbzService } from './services/dbz.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,6 +17,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   exports: [
     PaginaPrincipalComponent,

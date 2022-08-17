@@ -13,19 +13,23 @@ export class PersonajesComponent implements OnInit {
 
   constructor(private dbzService: DbzService) { }
 
-  ngOnInit(): void {
-  }
-
   get personajes () {
-    return this.dbzService.getLista;
-  }
-
-  eliminar = (index: number) => {
-    this.dbzService.eliminarPersonaje(index);
+    return this.dbzService.personajes;
   };
 
-  setForm = (personaje: Personaje, index: number) => {
-    this.dbzService.index = index;
+  ngOnInit(): void {
+    this.dbzService.cargarData();
+  }
+
+  eliminar = (_id: string) => {
+    this.dbzService.delete(_id).subscribe(response => {
+      this.dbzService.cargarData();
+      this.dbzService.opcion = 'CREAR';
+    });
+  };
+
+  setForm = (personaje: Personaje) => {
     this.personajeToModify.emit(personaje);
+    this.dbzService._id = personaje._id;
   };
 }
