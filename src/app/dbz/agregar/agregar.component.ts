@@ -19,7 +19,8 @@ export class AgregarComponent implements OnInit {
   }
 
   resetForm = () => {
-
+    this.dbzService.index = -1;
+    this.dbzService.opcion = 'CREAR';
   }
 
   insertar = () => {
